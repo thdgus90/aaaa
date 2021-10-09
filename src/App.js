@@ -33,6 +33,7 @@ function App() {
                     </Navbar.Collapse>
                 </Container>
             </Navbar>
+            <Switch>
             <Route exact="exact" path="/">
             <div className="one">
                 <h1>20% Season off</h1>
@@ -50,11 +51,16 @@ function App() {
             </div>
             </Route>
 
-
-            <Route path="/detail">
-                <Detail/>
+                        /detail/:id (아무문자나 받겠다는 url작명법)  
+            <Route path="/detail/:id">
+                <Detail shoes={shoes}/>
             </Route>
 
+
+            <Route path="/:id">
+                    <div>아무거나 적엇을때 이거보여주셈</div>
+            </Route>
+                    </Switch>
         </div>
 
     );
