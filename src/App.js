@@ -56,6 +56,8 @@ function App() {
                 return <Card shoes={shoes[i]} i={i} key={i} />;
               })}
             </div>
+            {/* aixos.post("서버URL", { id: "codingapple", pw: 1234 }); */}
+
             <button
               className="btn btn-primary"
               onClick={() => {
@@ -63,6 +65,7 @@ function App() {
                   .get("https://codingapple1.github.io/shop/data2.json")
                   .then((result) => {
                     console.log(result.data);
+                    shoes변경([...shoes, ...result.data]);
                   })
                   .catch(() => {
                     console.log("실패");
